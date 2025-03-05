@@ -40,6 +40,10 @@ const config: Config = {
       screens: {
         xs: "420px",
       },
+      fontFamily:{
+        inter:["var(--font-Inter)"],
+        "space-grotesk":["var(--font-Space-Grotesk)"]
+      }
     },
   },
   plugins: [],

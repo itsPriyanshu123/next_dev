@@ -1,34 +1,53 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+  import type { Metadata } from "next";
+  import { Inter,Space_Grotesk } from "next/font/google";
+  import "./globals.css";
+import ThemeProvider from "@/context/Theme";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
-export const metadata: Metadata = {
-  title: "Dev flow ",
-  description: "Developing a stackeOverflow ",
-};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
-}
+  const inter = Inter({
+    variable: "--font-Inter",
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
+  });
+  const space_Grotesk = Space_Grotesk({
+    variable: "--font-Space-Grotesk",
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+  });
+
+
+  export const metadata: Metadata = {
+    title: "Dev Overflow",
+    description:
+      "A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+    icons: {
+      icon: "/images/site-logo.svg",
+    },
+  };
+  
+
+  export default function RootLayout({
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${inter.variable} ${space_Grotesk.variable} antialiased`}
+        >
+          <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          >
+
+          {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    );
+  }
