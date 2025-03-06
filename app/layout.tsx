@@ -2,6 +2,7 @@
   import { Inter,Space_Grotesk } from "next/font/google";
   import "./globals.css";
 import ThemeProvider from "@/context/Theme";
+import Navbar from "@/components/ui/navigation/navbar";
 
 
 
@@ -44,6 +45,7 @@ import ThemeProvider from "@/context/Theme";
           enableSystem
           disableTransitionOnChange
           >
+            <Navbar/>
 
           {children}
           </ThemeProvider>
