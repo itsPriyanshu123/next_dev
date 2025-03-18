@@ -52,7 +52,11 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		backgroundImage: {
+			"auth-dark":'url("/images/auth-dark.png")',
+			"auth-light":'url("/images/auth-light.png")'
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
