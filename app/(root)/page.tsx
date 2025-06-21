@@ -12,6 +12,9 @@ import ROUTES from "@/constant/route";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import LocalSeacrch from "@/components/searchComponent/LocalSearch";
+import HomeFilter from "@/components/filters/HomeFilter";
+import Homefilter from "@/components/filters/HomeFilter";
+
 
 
 
@@ -79,7 +82,7 @@ const filterdQuestion = questions.filter((question)=>{
           otherClasses="flex-1"
         />
       </section>
-      HomeFilter
+      <Homefilter/>
       <div className="mt-10 flex w-full flex-col gap-6">
     
       </div>
