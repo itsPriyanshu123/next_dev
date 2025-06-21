@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
-import Navbar from "@/components/ui/navigation/navbar";
+import Navbar from "@/components/navigation/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { auth } from "@/auth";
 
@@ -37,6 +37,11 @@ export default async function RootLayout({
   console.log("asuth", session)
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        
+            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
+      </head>
       <SessionProvider session={session}>
         <body
           className={`${inter.variable} ${space_Grotesk.variable} antialiased`}

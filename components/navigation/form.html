@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cash Balancing Register - Suryoday</title>
+  <style>
+
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+
+
+
+
+    /* Responsive Scroll Wrapper */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Improve horizontal scrolling for small screens */
+@media screen and (max-width: 1200px) {
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #ccc;
+  }
+  @page {
+  size: landscape;
+}
+
+
+  table {
+    min-width: 1600px; /* Retain the original structure */
+  }
+}
+
+
+    .container {
+      max-width: 100%;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #999;
+      overflow-x: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1600px;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 4px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      border: none;
+      text-align: center;
+      font-size: 11px;
+      padding: 2px;
+    }
+
+    .denomination-label {
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    .total-row td {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+
+    /* Vertical line between Num and Amt */
+    th.with-divider,
+    td.with-divider {
+      border-right: 2px solid #000;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .container {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #999;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1600px;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 4px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      border: none;
+      text-align: center;
+      font-size: 11px;
+      padding: 2px;
+    }
+
+    .denomination-label {
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    .total-row td {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+
+    th.with-divider,
+    td.with-divider {
+      border-right: 2px solid #000;
+    }
+
+    .right-panel {
+      width: 400px;
+    }
+
+    .box {
+      border: 1px solid #000;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .box-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .stamp-grid {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .stamp-grid div {
+      flex: 1;
+      border: 1px solid #000;
+      margin: 0 5px;
+      padding: 25px 5px;
+      font-size: 11px;
+    }
+
+    .footer-line {
+      font-weight: bold;
+      border-top: 1px solid #000;
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+
+    .footer-line span {
+      display: inline-block;
+      width: 32%;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center; margin-bottom: 20px;">CASH BALANCING REGISTER - SURYODAY</h2>
+  <div class="table-wrapper">
+    <h4>Section 1: Denomination to EOD</h4>
+    <table>
+      <thead>
+<tr>
+  <th rowspan="2">Denomination</th>
+  <th colspan="2">BOD</th>
+  <th colspan="2">Cash Withdrawn</th>
+  <th colspan="2">Intraday In</th>
+  <th colspan="2">Intraday Out</th>
+  <th colspan="2">EOD</th>
+</tr>
+<tr>
+  <th class="with-divider">Num</th><th>Amt</th>
+  <th class="with-divider">Num</th><th>Amt</th>
+  <th class="with-divider">Num</th><th>Amt</th>
+  <th class="with-divider">Num</th><th>Amt</th>
+  <th class="with-divider">Num</th><th>Amt</th>
+</tr>
+</thead>
+      <tbody>
+        <tr><td class='denomination-label'>2000</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>1000</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>500</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>200</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>100</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>50</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>20</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>10</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>5</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>2</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>1</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+        
+<tr class="total-row"><td>Total (A)</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr><td class="denomination-label">Coins - 10</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr class="total-row"><td>Total (B)</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr><td class="denomination-label">Bait Money</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr class="total-row"><td>Total (C)</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr><td class="denomination-label">Soiled Notes</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr><td class="denomination-label">Old Notes</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+<tr class="total-row"><td>GRAND TOTAL (A+B+C+D+E)</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+      </tbody>
+    </table>
+
+    <h4>Section 2: Post BOD Onward</h4>
+    <table>
+      <thead>
+<tr>
+  <th>Denomination</th>
+  <th colspan="2">Post BOD</th>
+  <th colspan="2">Post Intraday In</th>
+  <th colspan="2">Post Intraday Out</th>
+</tr>
+<tr>
+  <th></th>
+  <th class="with-divider">Num</th><th>Amt</th>
+  <th class="with-divider">Num</th><th>Amt</th>
+  <th class="with-divider">Num</th><th>Amt</th>
+</tr>
+</thead>
+      <tbody>
+        <tr><td class='denomination-label'>2000</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>1000</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>500</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>200</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>100</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>50</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>20</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>10</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>5</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>2</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+<tr><td class='denomination-label'>1</td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td><td class="with-divider"></td><td></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+ 
+  <div class="wrapper">
+    <div class="container">
+      <!-- Paste your full <table> content here -->
+      <!-- (Omitted here to save space - use your existing full table HTML) -->
+    </div>
+
+    <div class="right-panel">
+      <div class="box">
+        <div class="box-title">STAMP DETAILS:</div>
+        <div style="height: 100px; border: 1px dashed #888;"></div>
+      </div>
+
+      <div class="box">
+        <div class="box-title">STAMP USED TODAY</div>
+        <div class="stamp-grid">
+          <div>Custodian 1</div>
+          <div>Custodian 2</div>
+          <div>BM / BOM</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-title">Remarks if any:</div>
+        <div style="height: 60px; border-top: 1px solid #000; margin-top: 5px;"></div>
+      </div>
+
+      <div class="footer-line">
+        <span>Checked by</span>
+        <span style="text-align:center;">Signature</span>
+        <span style="text-align:right;">Date: ______ | Page No: ___</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
