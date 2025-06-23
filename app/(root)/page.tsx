@@ -58,10 +58,15 @@ interface SearchParams {
 
  export default async function Home( {searchParams}:SearchParams) {
 
-const {querry=""}=await searchParams
-const filterdQuestion = questions.filter((question)=>{
-  question.title.toLowerCase().includes(querry?.toLowerCase())
-})
+const { query = "", filter = "" } = await searchParams;
+
+const filteredQuestions = questions.filter((question) => {
+  const matchesQuery = question.title.toLowerCase().includes(query.toLowerCase());
+  const matchesFilter =
+    !filter ||
+    question.tags.some((tag) => tag.name.toLowerCase() === filter.toLowerCase());
+  return matchesQuery && matchesFilter;
+});
   return (
     <>
       <section className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
